@@ -1,0 +1,18 @@
+# Node.js dependencies
+node_modules/
+
+# Build artifacts
+/build/
+/dist/
+/out/
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.suo
+*.ntvs*
+
+# Dependency lock files
+yarn.lock
+package-lock.json
