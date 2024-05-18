@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import { Form, Button, Col } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import FormContainer from '../components/FormContainer';
-import CheckoutSteps from '../components/CheckoutSteps';
-import { savePaymentMethod } from '../slices/cartSlice';
+import { useState, useEffect } from "react";
+import { Form, Button, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import FormContainer from "../components/FormContainer";
+import CheckoutSteps from "../components/CheckoutSteps";
+import { savePaymentMethod } from "../slices/cartSlice";
 
 const PaymentScreen = () => {
   const navigate = useNavigate();
@@ -13,18 +13,18 @@ const PaymentScreen = () => {
 
   useEffect(() => {
     if (!shippingAddress.address) {
-      navigate('/shipping');
+      navigate("/shipping");
     }
   }, [navigate, shippingAddress]);
 
-  const [paymentMethod, setPaymentMethod] = useState('Esewa');
+  const [paymentMethod, setPaymentMethod] = useState("Khalti");
 
   const dispatch = useDispatch();
 
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(savePaymentMethod(paymentMethod));
-    navigate('/placeorder');
+    navigate("/placeorder");
   };
 
   return (
@@ -33,24 +33,22 @@ const PaymentScreen = () => {
       <h1>Payment Method</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group>
-          <Form.Label as='legend'>Select Method</Form.Label>
+          <Form.Label as="legend">Select Method</Form.Label>
           <Col>
             <Form.Check
-              className='my-2'
-              type='radio'
-              label='Esewa'
-              id='Esewa'
-              name='paymentMethod'
-              value='Esewa'
+              className="my-2"
+              type="radio"
+              label="Khalti or Cash On Delivery"
+              id="Khalti"
+              name="paymentMethod"
+              value="Khalti"
               checked
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
           </Col>
         </Form.Group>
 
-        <Button type='submit' variant='primary'>
-          Continue
-        </Button>
+        <Button type="submit">Continue</Button>
       </Form>
     </FormContainer>
   );

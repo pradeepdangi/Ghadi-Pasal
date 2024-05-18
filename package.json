@@ -14,9 +14,14 @@
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
     "generate-toc": "markdown-toc -i readme.md"
   },
-  "author": "Brad Traversy",
+  "author": "Pradeep Dangi",
   "license": "MIT",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.1",
+    "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "cookie-parser": "^1.4.6",
