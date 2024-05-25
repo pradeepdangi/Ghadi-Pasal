@@ -1,4 +1,4 @@
-# ProShop eCommerce Platform (v2)
+# Ghadi Pasal eCommerce Platform (v2)
 
 > eCommerce platform built with the MERN stack & Redux.
 
@@ -6,7 +6,7 @@
 
 This project is part of my [MERN Stack From Scratch | eCommerce Platform](https://www.traversymedia.com/mern-stack-from-scratch) course. It is a full-featured shopping cart with PayPal & credit/debit payments.
 
-This is version 2.0 of the app, which uses Redux Toolkit. The first version can be found [here](https://proshopdemo.dev)
+This is version 2.0 of the app, which uses Redux Toolkit. The first version can be found [here](https://GhadiPasaldemo.dev)
 
 <!-- toc -->
 
@@ -133,7 +133,7 @@ jane@email.com (Customer)
 # Bug Fixes, corrections and code FAQ
 
 The code here in the main branch has been updated since the course was published to fix bugs found by students of the course and answer common questions, if you are looking to compare your code to that from the course lessons then
-please refer to the [originalcoursecode](https://github.com/bradtraversy/proshop-v2/tree/originalCourseCode) branch of this repository.
+please refer to the [originalcoursecode](https://github.com/bradtraversy/GhadiPasal/tree/originalCourseCode) branch of this repository.
 
 There are detailed notes in the comments that will hopefully help you understand
 and adopt the changes and corrections.
