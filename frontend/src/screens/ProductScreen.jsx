@@ -148,6 +148,7 @@ const ProductScreen = () => {
 
                   <ListGroup.Item>
                     <Button
+                    // style={{background:"red"}}
                       className='btn-block'
                       type='button'
                       disabled={product.countInStock === 0}

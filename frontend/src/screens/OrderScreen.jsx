@@ -149,7 +149,9 @@ const OrderScreen = () => {
                       <Image src={item.image} alt={item.name} fluid rounded />
                     </Col>
                     <Col>
-                      <Link to={`/product/${item.product}`}>{item.name}</Link>
+                    <Link to={`/product/${item.product}`}>
+                            {item.name}
+                          </Link>
                     </Col>
                     <Col md={4}>
                       {item.qty} x Rs.{item.price} = Rs.{item.qty * item.price}
@@ -215,7 +217,7 @@ const OrderScreen = () => {
                           <Button
                             onClick={handleClick}
                             style={{
-                              background: `url(${KhaltiButton})`,
+                              backgroundImage: `url(${KhaltiButton})`, // Use backgroundImage for the URL
                               backgroundSize: "cover",
                               width: "auto",
                               height: "auto",
