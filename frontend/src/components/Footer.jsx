@@ -15,14 +15,14 @@ const Footer = () => {
             <h5>Contact Us</h5>
             <p>
               <FontAwesomeIcon icon={faEnvelope} className="me-2" />
-              <a href="mailto:ghadipasal@gmail.com" className="text-light">
-                ghadipasal@gmail.com
+              <a href="mailto:pradeepdangi255@gmail.com" className="text-light">
+                pradeepdangi255@gmail.com
               </a>
             </p>
             <p>
               <FontAwesomeIcon icon={faPhone} className="me-2" />
-              <a href="tel:+1234567890" className="text-light">
-                +1234567890
+              <a href="tel:9812822182" className="text-light">
+                9812822182
               </a>
             </p>
           </Col>
