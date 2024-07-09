@@ -26,6 +26,7 @@ const getProducts = asyncHandler(async (req, res) => {
   console.log("Product",products)
 });
 
+
 // @desc    Fetch single product
 // @route   GET /api/products/:id
 // @access  Public
@@ -156,20 +157,37 @@ const getTopProducts = asyncHandler(async (req, res) => {
 });
 
 const filterCategory = asyncHandler(async (req, res) => {
-  const { category } = req.params;
+  const pageSize = parseInt(process.env.PAGINATION_LIMIT); // Parse the pagination limit to integer
+  const page = parseInt(req.query.pageNumber) || 1; // Parse the page number to integer
+  const sortOption = req.query.sort || 'newest'; // Get the sort option from the query, default to 'newest'
+  const category = req.query.category; // Get the category from the query if provided
 
-  try {
-    // Find products with the specified category
-    const products = await Product.find({ category });
-
-    if (!products || products.length === 0) {
-      return res.status(404).json({ message: 'No products found for this category' });
-    }
-
-    res.json(products);
-  } catch (error) {
-    res.status(500).json({ message: 'Internal Server Error' });
+  // Determine the sort order based on the sort option
+  let sortOrder;
+  switch (sortOption) {
+    case 'oldest':
+      sortOrder = { createdAt: 1 }; // Sort by creation date ascending
+      break;
+    case 'newest':
+    default:
+      sortOrder = { createdAt: -1 }; // Sort by creation date descending
+      break;
   }
+
+  const query = {};
+
+  // Add category filter if provided
+  if (category) {
+    query.category = category;
+  }
+
+  const count = await Product.countDocuments(query);
+  const products = await Product.find(query)
+    .sort(sortOrder) // Apply the sort order
+    .limit(pageSize)
+    .skip(pageSize * (page - 1));
+
+  res.json({ products, page, pages: Math.ceil(count / pageSize) });
 });
 
 export {
