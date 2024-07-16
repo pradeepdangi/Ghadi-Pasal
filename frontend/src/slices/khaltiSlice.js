@@ -13,6 +13,8 @@ export const khaltiSlice = apiSlice.injectEndpoints({
       }),
     }),
 
+
+    // cont
     Confirmation: builder.mutation({
       query: (data) => ({
         url: `${KHALTI_URL}/khalti_com`,
