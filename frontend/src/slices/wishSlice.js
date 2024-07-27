@@ -35,9 +35,8 @@ const wishSlice = createSlice({
         JSON.stringify(state.wishlistItems)
       );
     },
-    resetWish: (state) => (state = initialState),
   },
 });
 
-export const { addToWistList, removeWishItem, resetWish } = wishSlice.actions;
+export const { addToWistList, removeWishItem } = wishSlice.actions;
 export default wishSlice.reducer;

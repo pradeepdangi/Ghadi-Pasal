@@ -9,7 +9,6 @@ import SearchBox from './SearchBox';
 import FilterBox from './FilterBox';
 import logo from '../assets/logo.png';
 import { resetCart } from '../slices/cartSlice';
-import { resetWish } from '../slices/wishSlice';
 // import { WishList } from './wish-list';
 
 const Header = () => {
@@ -30,7 +29,6 @@ const Header = () => {
       // NOTE: here we need to reset cart state for when a user logs out so the next
       // user doesn't inherit the previous users cart and shipping
       dispatch(resetCart());
-      dispatch(resetWish());
       navigate('/login');
     } catch (err) {
       console.error(err);
